@@ -1,0 +1,83 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Base ===== */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  color: #1f2937;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+header p {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 720px;
+  margin: 1.5rem auto;
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
+
+section p {
+  margin-bottom: 0.9rem;
+  color: #374151;
+}
+
+section ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+section li {
+  padding: 0.5rem 0 0.5rem 1.2rem;
+  position: relative;
+  color: #374151;
+}
+
