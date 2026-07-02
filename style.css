@@ -10,48 +10,119 @@ body {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.7;
   color: #1f2937;
-  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #e8edf5 100%);
   min-height: 100vh;
+  animation: fadeIn 0.7s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===== Header ===== */
 header {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #2563eb 140%);
   color: #ffffff;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem 4rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-  font-size: 2.75rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.75rem;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
 }
 
-header p {
+.tagline {
   font-size: 1.15rem;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* ===== Social links in header ===== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
 /* ===== Sections ===== */
+main {
+  padding-top: 1rem;
+}
+
 section {
   max-width: 720px;
   margin: 1.5rem auto;
-  padding: 2rem 2rem;
+  padding: 2.25rem 2.25rem;
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 section h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.55rem;
+  font-weight: 700;
   color: #0f172a;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.6rem;
 }
 
 section h2::after {
@@ -59,9 +130,9 @@ section h2::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
+  width: 45px;
   height: 3px;
-  background-color: #2563eb;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
   border-radius: 2px;
 }
 
@@ -76,8 +147,62 @@ section ul {
 }
 
 section li {
-  padding: 0.5rem 0 0.5rem 1.2rem;
+  padding: 0.55rem 0 0.55rem 1.3rem;
   position: relative;
   color: #374151;
 }
 
+section li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* ===== Links ===== */
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+  }
+
+  section {
+    margin: 1rem;
+    padding: 1.75rem;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+}
